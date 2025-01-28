@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+
+.calculator {
+    display: grid;
+    grid-template-rows: 60px 50px 50px 1fr 1fr 1fr; /* Pevné výšky řádků */
+    grid-template-columns: 75px 75px 75px 75px; /* Pevné šířky sloupců */
+    gap: 5px;
+    width: 335px; /* Šířka kalkulačky */
+    height: 510px; /* Výška kalkulačky */
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+    grid-column: span 4;
+    background: #eee;
+    color: #000;
+    font-size: 2rem; /* Upravena velikost fontu pro pevné rozměry */
+    text-align: right;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.top-functions {
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: 75px 75px 75px 75px; /* Pevné šířky tlačítek */
+    gap: 5px;
+}
+
+.advanced-functions {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 75px 75px 75px;
+    gap: 5px;
+}
+
+.numbers {
+    grid-row: 4 / span 3;
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 75px 75px 75px;
+    grid-template-rows: 75px 75px 75px 75px; /* Pevné výšky tlačítek */
+    gap: 5px;
+}
+
+.operators {
+    grid-row: 3 / span 4;
+    grid-column: 4;
+    display: grid;
+    grid-template-rows: 50px 75px 75px 75px 75px; /* Pevné výšky tlačítek */
+    gap: 5px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px; 
+    padding-top: 100px;
+}
+
+button {
+    font-size: 1.2rem;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease;
+    height: 100%;
+}
+
+button:hover {
+    background: #f1f1f1;
+}
+
+button:active {
+    background: #ddd;
+}
+
+.operators button:last-child {
+    background: #0078d7;
+    color: #fff;
+    font-weight: bold;
+}
+
+.operators button:last-child:hover {
+    background: #005bb5;
+}
+
+.stats-table {
+    border-collapse: collapse;
+    width: 335px; /* Šířka tabulky zarovnaná s kalkulačkou */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 30px;
+}
+
+.stats-table th, .stats-table td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.stats-table th {
+    background-color: #0078d7;
+    color: white;
+}
+
+.stats-table td {
+    font-size: 1rem;
+}
